@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist>
+  <dict>
+    <key>CFBundleIconFile</key>
+    <string>@MACOSX_BUNDLE_ICON_FILE@</string>
+    <key>CFBundleDisplayName</key>
+    <string>@PROJECT_NAME@</string>
+    <key>CFBundleIdentifier</key>
+    <string>@MACOSX_BUNDLE_GUI_IDENTIFIER@</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleShortVersionString</key>
+    <string>@MAJOR_VERSION@.@MINOR_VERSION@</string>
+    <key>CFBundleVersion</key>
+    <string>@BUILD_VERSION@</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>(c) 2025 by mars3142</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+  </dict>
+</plist>

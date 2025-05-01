@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.30)
 
 set(MAJOR_VERSION 0)
-set(MINOR_VERSION 0)
-set(MICRO_VERSION 1)
+set(MINOR_VERSION 1)
+set(BUILD_VERSION 1)
 
 project(
-        gcxxxxx
+        gcxxxx
         LANGUAGES CXX C
-        VERSION "${MAJOR_VERSION}.${MINOR_VERSION}.${MICRO_VERSION}"
+        VERSION "${MAJOR_VERSION}.${MINOR_VERSION}.${BUILD_VERSION}"
 )
 
 set(CMAKE_C_STANDARD 23)
@@ -82,6 +82,11 @@ add_executable(${PROJECT_NAME}
         main/sim/led_matrix.cc
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        MACOSX_BUNDLE_GUI_IDENTIFIER dev.mars3142.${PROJECT_NAME}
+        MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/CMake/Info.plist.in
+)
+
 target_compile_definitions(${PROJECT_NAME} PRIVATE SDL_MAIN_USE_CALLBACKS)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
@@ -91,6 +96,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         ImGui::ImGui
         GC::GAME
 )
+
 target_link_libraries(${PROJECT_NAME} PUBLIC
         GC::COMMON
 )

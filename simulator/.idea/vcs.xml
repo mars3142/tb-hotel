@@ -22,13 +22,6 @@
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_image-src/external/libtiff" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_image-src/external/libwebp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_image-src/external/zlib" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src/external/freetype" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src/external/freetype/subprojects/dlg" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src/external/harfbuzz" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src/external/plutosvg" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src/external/plutosvg/plutovg" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sdl_ttf-src/external/plutovg" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/imgui" vcs="Git" />
   </component>
 </project>

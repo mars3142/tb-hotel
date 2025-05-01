@@ -21,9 +21,6 @@ bool show_unhandled_events = false;
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 {
     SDL_SetAppMetadata("GCXXXX", "1.0", "dev.mars3142.gcxxxx");
-    SDL_SetAppMetadataProperty(SDL_PROP_APP_METADATA_TYPE_STRING, "application");
-    SDL_SetAppMetadataProperty(SDL_PROP_APP_METADATA_COPYRIGHT_STRING, "(c) 2025 by Peter Siegmund");
-    SDL_SetAppMetadataProperty(SDL_PROP_APP_METADATA_URL_STRING, "https://mars3142.dev");
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMEPAD) == false)
     {
