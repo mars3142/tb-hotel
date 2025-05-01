@@ -72,5 +72,5 @@ direct_dependencies:
 - idf
 - mauriciobarroso/button
 manifest_hash: a7d020acfd22f8fa6b3d1d58c8398446a6dd4e18ff772147c94711e3b6322c0e
-target: esp32h2
+target: esp32s3
 version: 2.0.0

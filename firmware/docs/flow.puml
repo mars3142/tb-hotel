@@ -1,0 +1,46 @@
+@startuml Nullable
+hide empty description
+
+-Neues Enum-Attribut wurde in Java-api-dto hinzugefügt
+-UnknownEnum-Value in jedem Fall hinzufügen
+note right
+<code>
+enum SwitchChannelMode {
+  @JsonValue('UNKNOWN')
+  unknown,
+  @JsonValue('SWITCH_ACTUATOR')
+  switchActuator,
+  @JsonValue('FLOOR_HEATING')
+  floorHeating,
+}
+</code>
+end note
+if (Ist neues Attribut Nullable?) then (nein)
+    if (Wurde das Attribut an einer bestehenden Klasse angefügt?) then (nein)
+        -Enum-Attribut nicht nullable machen
+        note left
+        <code>
+        @JsonKey(
+            unknownEnumValue: SwitchChannelMode.unknown,
+        )
+        final SwitchChannelMode switchChannelMode;
+        </code>
+        end note
+        detach
+    else (ja)
+        -Enum-Attribut nullable machen
+        detach
+    end if
+else (ja)
+    -Enum-Attribut nullable machen
+    note right
+    <code>
+    @JsonKey(
+        unknownEnumValue: SwitchChannelMode.unknown,
+    )
+    final SwitchChannelMode? switchChannelMode;
+    </code>
+    end note
+    detach
+
+@enduml

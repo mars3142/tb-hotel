@@ -1,0 +1,14 @@
+@startuml
+hide empty description
+skinparam handwritten true
+skinparam sequenceMessageAlign center
+
+App -> AuthServer: App public key
+App <- AuthServer: AuthServer public key
+App <- AuthServer: push (encrypted with App pub key)
+App -> AuthServer: confirm push with decrypted content
+
+App -> LogServer: Log signed with App private key
+AuthServer <- LogServer: validates signature
+
+@enduml

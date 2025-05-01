@@ -2,9 +2,12 @@
 
 #include <vector>
 
+#include "SDL3/SDL.h"
+
+#include "../app_state.h"
 #include "GC/led_matrix.h"
 #include "GC/wled.h"
-#include "SDL3/SDL.h"
+
 
 namespace sim
 {
@@ -16,13 +19,13 @@ namespace sim
             leds.reserve(width * height);
         }
 
-        void draw(SDL_Renderer* renderer) const;
+        void draw(const AppState* appState) const;
         void setPixelColor(std::uint16_t n, std::uint32_t c) override;
         void clear() override;
         void show() override;
 
     private:
-        static void drawCircle(SDL_Renderer* renderer, const SDL_FPoint* position);
+        static void drawCircle(const AppState* appState, const SDL_FPoint* position);
 
         uint8_t width;
         uint8_t height;

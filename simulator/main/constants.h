@@ -1,0 +1,12 @@
+#pragma once
+
+#define WLED_SIZE    (25.0f)
+#define WLED_SPACING (10.0f)
+
+#define LED_COUNT_WIDTH  (32)
+#define LED_COUNT_HEIGHT (8)
+
+#define WINDOW_WIDTH  (LED_COUNT_WIDTH * WLED_SIZE + WLED_SPACING)
+#define WINDOW_HEIGHT (LED_COUNT_HEIGHT * WLED_SIZE + WLED_SPACING)
+
+#define IMGUI_MENU_HEIGHT (20.0f)
