@@ -12,10 +12,6 @@
 sim::LedMatrix led_matrix(LED_COUNT_WIDTH, LED_COUNT_HEIGHT);
 const gc::Game game(led_matrix);
 
-uint64_t currentTime = 0;
-uint64_t prevTime = 0;
-float delta = 0.0f;
-
 bool show_unhandled_events = false;
 
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
@@ -58,7 +54,7 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad; // Enable Gamepad Controls
 
     // Setup Dear ImGui style
-    ImGui::StyleColorsLight();
+    ImGui::StyleColorsDark();
 
     ImGui_ImplSDL3_InitForSDLRenderer(appState->window, appState->renderer);
     ImGui_ImplSDLRenderer3_Init(appState->renderer);
@@ -84,8 +80,6 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 
         if (event->key.key == SDLK_ESCAPE)
         {
-            // end the program on ESC key,
-            // returning success to the OS
             return SDL_APP_SUCCESS;
         }
         break;
@@ -105,7 +99,6 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
         break;
     }
 
-    // return continue to continue
     return SDL_APP_CONTINUE;
 }
 
@@ -140,7 +133,6 @@ SDL_AppResult SDL_AppIterate(void* appstate)
             ImGui::EndMainMenuBar();
         }
 
-        // Rendering
         ImGui::Render();
         ImGui_ImplSDLRenderer3_RenderDrawData(ImGui::GetDrawData(), appState->renderer);
     }
@@ -154,7 +146,6 @@ void SDL_AppQuit(void* appstate, SDL_AppResult result)
 {
     const auto appState = static_cast<AppState*>(appstate);
 
-    // Cleanup
     ImGui_ImplSDLRenderer3_Shutdown();
     ImGui_ImplSDL3_Shutdown();
     ImGui::DestroyContext();
